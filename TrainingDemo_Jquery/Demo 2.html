@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <title>Function Demo 2</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="text/javascript">
+  $(document).ready(function() {
+  // Add row (inline) - 在HTML中直接綁定onclick
+
+  // Add row (click function)
+  $('input[value="Add row"]').click(function() {
+    addRow('Display Time');
+  });
+
+  function addRow(_text) {
+    // 新增表格行，並在第0格中加入button和文字
+    let newRow = $('<tr><td><label><button type="button" class="btn_display">' + _text + '</button></label></td><td></td><td></td><td><button type="button" class="delete">delete</button></td></tr>');
+    
+    // 為新加入的button綁定點擊事件
+    newRow.find('button.btn_display').on('click', function() {
+        // 取得當前日期和時間
+        let currentDate = new Date();
+        let dateStr = currentDate.toLocaleDateString(); // 格式化為日期
+        let timeStr = currentDate.toLocaleTimeString(); // 格式化為時間
+
+        // 顯示日期於第1格，時間於第2格
+        $(this).closest('tr').find('td').eq(1).text(dateStr); // 顯示日期
+        $(this).closest('tr').find('td').eq(2).text(timeStr); // 顯示時間
+    });
+    newRow.find('button.delete').on('click', function() {
+	    console.log('$(this)');
+	    console.log($(this));
+	    console.log(this);
+	});
+    // 將新行附加到表格中
+    $('#displayArea .tg tbody').append(newRow);
+  }
+
+
+});
+  </script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="displayArea">
+<table class="tg">
+  <thead>
+  <tr>
+    <th>demo</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+  </tr>
+  </thead>
+<tbody>
+  <tr>
+    <td><label><input type="checkbox"> demo</label></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+</tbody>
+</table>
+</div>
+
+<br/>
+
+<div id="controlArea">
+  <input type="button" value="Add row">
+</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+  <style type="text/css">
+  select{
+     margin:3px 6px 3px 3px;
+  }
+  </style>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./UIstyle.css">
+  <title>Function Demo 0</title>
+  <script type="text/javascript">
+   
+   //定義全域變數(所有function內都可以取用此類變數)
+  var CityAry = ['Taipei','Tainan','Taichung','Hsinchu']
+  var BranchAry = ['沒有內湖店','台北外湖店','台北東湖店','台北西湖店','台北南湖店','沒有北湖店']
+  var BranchObjAry = [{name:'台北內湖店',BranchId:'A1'},   {name:'沒有外湖店',BranchId:'A2'},   {name:'台北東湖店',BranchId:'A3'},   {name:'台北西湖店',BranchId:'A4'},   {name:'台北南湖店',BranchId:'A5'},   {name:'沒有北湖店',BranchId:'A6'}   ]
+   
+   //準備後，才執行(ready事件)
+  $(document).ready(function () {
+  //依序執行
+  //1. 準備頁面上的各個元件 start
+  readyDDL();
+  
+  $('.datePicker').datepicker({
+  dateFormat: "yy/mm/dd"
+  });
+  //1. 準備頁面上的各個元件 end
+  
+  //2. 各個元件相對應的動作，使用者操作後將觸發對應的事件，事件被觸發時將執行此處設定的function start
+  
+  //2.1 pick按鈕的click事件
+  $('input[value=pick]').click(function(){
+      console.log($('#input_Food').val());
+	  let newBtn = '<input type="button" value="delete">';
+	  if($('#input_Food').val() != ""){
+	     $('table').append('<tr><td>'+$('#input_Food').val()+'</td><td>'+newBtn+'</td></tr>');
+	  }
+	  else{
+	     alert(':P');
+	  }
+  })
+  //2.2 click按鈕的click事件
+  $('input[value=click]').click(function(){
+      console.log($('#ddl_City').val());
+	  let newBtn = '<input type="button" value="delete">';
+	  if($('#ddl_City').val() != ""){
+	     $('table').append('<tr><td>Branch:'+$('#ddl_City').val()+'</td><td>'+newBtn+'</td></tr>');
+	  }
+	  else{
+	     alert(':P');
+	  }
+  })
+  
+  //2.3 table裡的delete按鈕，普通的click事件寫法
+  $('input[value=delete]').click(function(){
+      console.log('delete click')
+      //$(this).parent().remove();// 不刪除，方便看到結果
+      $(this).parent().parent().find('td:first').css('color','blue');
+  });
+  
+  //2.3.1 table裡的delete按鈕，使用on
+  $('.tg').on('click','input[value=delete]',function(){
+      console.log('delete click')
+      //$(this).parent().remove();
+      $(this).parent().parent().find('td:first').css('color','blue');
+  });
+  
+  //下拉選單也可以觸發click事件(td,table,span,div...等也有，要注意觸發事件的對象)
+  //$('#ddl_City').click(function(){
+  //    alert('aaaaaaaaaaaaaaa');
+  //});
+  
+  //$('table').click(function(){
+  //    console.log('click: ');
+  //    console.log($(this));
+  //});
+  
+  
+  //2.4 Date相關的事件：當input[type=text]的值被改變時觸發「change」事件，此時執行改寫datepicker最大/最小值的動作
+  //datepicker相關的option與使用方式由JqueryUI定義
+  $('#txt_EndDate').on('change',function(){
+    $('#txt_StartDate').datepicker('option','maxDate',$(this).val())
+  })
+  $('#txt_StartDate').on('change',function(){
+    $('#txt_EndDate').datepicker('option','minDate',$(this).val())
+  })
+  
+  //2. 各個元件相對應的動作，使用者操作後將觸發對應的事件，執行此處設定的function end
+  
+});
+
+
+//全域函數，全域皆可調用此類函數(不用任何關鍵字做區分，主要按照其所在位置區分)
+//ex. readyDDL可以在瀏覽器的開發者工具中被呼叫，倘若將readyDDL移到上方的ready事件中，則只有ready事件的function內可以調用readyDDL
+function readyDDL(){
+  //最初的HTML中，所有select元件都沒有任何選項，我們在這邊給它們加上選項
+  
+  //第一個選項，大家都一樣
+  $('#ddl_City').append('<option>- Select -</option>')
+  $('#ddl_Branch').append('<option>- Select -</option>')
+  
+  //這裡展示了陣列的forEach用法，第一種是單純的string陣列
+  //注意大小寫！
+  
+  //BranchAry.forEach(function(item){
+  //  $('#ddl_City').append('<option>'+item+'</option>')
+  //})
+  BranchObjAry.forEach(function(item){
+    $('#ddl_Branch').append('<option value='+item.BranchId+'>'+item.name+'</option>')
+  })
+  
+  
+  CityAry.forEach(function(item){
+    $('#ddl_City').append('<option>'+item+'</option>')
+  })
+  
+}
+
+</script>
+</head>
+<body>
+Name: <input type='text' id="input_Name"/>
+<br/>
+Gender:<input id="Male" value="Male" type="radio" name="Gender"><label for="Male">
+<span style="color:blue">男</span></label>
+<input id="female"value="female" type="radio" name="Gender"><label for="female">
+<span style="color:pink">女</span></label>
+<br/>
+Add Favorite Food: <input type='text' id="input_Food"/>
+<input type="button" value="pick">
+
+<table id="result" class="tg" style="display: block;width:200px;padding:10px 0">
+<tr><th colspan="2">result</th></tr>
+<tr><td>demo </td><td><input type="button" value="delete"></td></tr>
+</table>
+
+<br/>
+City: <select id="ddl_City"></select>Branch: <select id="ddl_Branch"></select>
+<input type="button" value="click">
+
+<br/>
+<span>Start：</span>
+<input type="text" class="datePicker" id="txt_StartDate" readonly="readonly"/>
+<span>End：</span>
+<input type="text" class="datePicker" id="txt_EndDate" readonly="readonly"/>
+
+</body>
+</html>
