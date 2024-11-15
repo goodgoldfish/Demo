@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>SQL作業example</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<p>找出居住在<span class='blue'>指定城市</span>且喜歡<span class='blue'>指定食物</span>的人，將這些人喜歡的食物一次<span class='red'>更新</span></p>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky">1</th>
+    <th class="tg-0pky"></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky"><span class='blue'>City</span></td>
+    <td class="tg-0pky">
+      <select id="ddl_City"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span class='blue'>Favorite Food(Now)</span></td>
+    <td class="tg-0lax">
+      <select id="ddl_food_NOW"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span class='red'>Favorite Food(NEW)</span></td>
+    <td class="tg-0lax">
+      <select id="ddl_food_NEW"/>
+    </td>
+  </tr>
+</tbody>
+</table>
+<input type="button" value="Submit" onclick="findUser()">
+<p>下面的table僅作為展示update時的對象(作業只要做到update即可不用展示)</p>
+<div id="div_result"/>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
