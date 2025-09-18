@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Jquery 1 example</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="small-12 medium-6 columns" style="    padding: 30px;">
+                <div class="row RegistrationRowCss">
+                    <div class="small-12 medium-4 columns RegistrationItemTitleCss" style="padding: 9px;">
+                        <span class="spanEmptyCheck" registvalue="Name">Name&nbsp;</span>
+                    </div>
+                    <div class="small-12 medium-3 columns RegistrationItemCss" style="padding: 2px;">
+                        <input id="txt_RegisteredFirstName" class="RegisteredTextBox CheckRegisteredTextEmpty" type="text" placeholder="Name" registvalue="First Name">
+                    </div>
+                </div>
+                <div class="row RegistrationRowCss">
+                    <div class="small-12 medium-4 columns RegistrationItemTitleCss" style="padding: 8px;">
+                        <span class="spanEmptyCheck" registvalue="Email">Email&nbsp;</span></div>
+                    <div class="small-12 medium-8 columns end RegistrationItemCss" style="padding: 2px;">
+                        <input id="txt_RegisteredEmail" class="RegisteredTextBox CheckRegisteredTextEmpty" type="text" registvalue="Email">
+                    </div>
+                </div>
+                <div class="row RegistrationRowCss">
+                    <div class="small-12 medium-4 columns RegistrationItemTitleCss" style="padding: 9px;">
+                        <span class="spanEmptyCheck" registvalue="Password">Password&nbsp;</span>
+                    </div>
+                    <div class="small-12 medium-8 columns end RegistrationItemCss" style="padding: 2px;">
+                        <input id="txt_RegisteredPassword" class="RegisteredTextBox CheckRegisteredTextEmpty" type="password" registvalue="Password" placeholder="Minimum of 6 characters in length">
+                    </div>
+                </div>
+                <div class="row RegistrationRowCss">
+                    <div class="small-12 medium-4 columns RegistrationItemTitleCss" style="padding: 9px;">
+                        <span class="spanEmptyCheck" registvalue="Company">Company&nbsp;</span>
+                    </div>
+                    <div class="small-12 medium-8 columns end RegistrationItemCss" style="padding: 2px;">
+                        <input id="txt_RegisteredCompany" class="RegisteredTextBox CheckRegisteredTextEmpty" type="text" registvalue="Company">
+                    </div>
+                </div>
+                <div class="row RegistrationRowCss">
+                    <div class="small-12 medium-4 columns RegistrationItemTitleCss" style="padding: 9px;">
+                        <span class="spanEmptyCheck" registvalue="Business Type">Business Type&nbsp;</span>
+                    </div>
+                    <div class="small-12 medium-8 columns end RegistrationItemCss" style="padding: 2px;">
+                        <select class="CheckRegisteredTextEmpty" id="select_RegisteredBusinessType" registvalue="Business Type" ><option value="">- Select -</option><option value="Association">Association</option><option value="Contractor">Contractor</option><option value="Distributor">Distributor</option><option value="End-user1 (without installation)">End-user1 (without installation)</option><option value="End-user2 (with installation)">End-user2 (with installation)</option><option value="Government">Government</option><option value="Installer">Installer</option><option value="Managed Service Provider">Managed Service Provider</option><option value="Manufacturer">Manufacturer</option><option value="Media">Media</option><option value="OEM">OEM</option><option value="Others">Others</option><option value="Security Service Provider">Security Service Provider</option><option value="System Integrator">System Integrator</option><option value="Trade show Organizer">Trade show Organizer</option></select>
+                    </div>
+                </div>
+                <div class="row RegistrationRowCss">
+                    <div class="small-12 medium-4 columns RegistrationItemTitleCss" style="padding: 9px;">
+                        <span class="spanEmptyCheck" registvalue="Phone">Phone&nbsp;</span>
+                    </div>
+                    <div class="small-12 medium-8 columns end RegistrationItemCss" style="padding: 2px;">
+                        <input class="RegisteredTextBox CheckRegisteredTextEmpty" id="txt_RegisteredPhone" type="text" registvalue="Phone">
+                    </div>
+                </div>
+                <div class="row RegistrationRowCss">
+                    <div class="small-12 medium-4 columns RegistrationItemTitleCss" style="padding: 9px;">
+                        <span class="spanEmptyCheck" registvalue="Job Title">Job title&nbsp;</span>
+                    </div>
+                    <div class="small-12 medium-8 columns end RegistrationItemCss" style="padding: 2px;">
+                        <input id="txt_RegisteredJobTitle" class="RegisteredTextBox CheckRegisteredTextEmpty" type="text" registvalue="Job Title">
+                    </div>
+                </div>
+                <div class="row RegistrationRowCss">
+                    <div class="small-12 medium-4 columns RegistrationItemTitleCss" style="padding: 9px;">
+                        <span class="spanEmptyCheck" registvalue="Country">Country&nbsp;</span>
+                    </div>
+                    <div class="small-12 medium-8 columns end RegistrationItemCss" style="padding: 2px;">
+                        <select class="CheckRegisteredTextEmpty" id="select_RegisteredCountry" registvalue="Country" ><option value="">- Select -</option><option value="8F40BDD0-F87E-4806-83DF-DB1803E518BB_AF">Afghanistan</option><option value="4C895F2A-2867-4138-872A-C99D17BFE94B_AL">Albania</option><option value="a40901ec-b402-47c9-822c-5822a01323f4_AS">American Samoa</option><option value="699728D8-4892-44BC-98CF-A148E2C84CBC_AD">Andorra</option><option value="1E6B07BF-4809-4D89-9B42-F50A88A052CD_AO">Angola</option><option value="2AE34CCF-361B-4D4D-A6DB-14440239FDA6_AU">Australia</option><option value="16672955-D06E-480C-9023-DA30F3CE35A2_AT">Austria</option><option value="1BB024A9-C70C-4ADD-A049-B9CC724419D0_BS">Bahamas</option><option value="A87D675C-7F22-4FF1-85B7-576039C786C6_CO">Colombia</option><option value="E99863F1-5CBD-469A-92EC-196BECC2B000_LU">Luxembourg</option><option value="57570932-05AE-40B3-B878-374006DBEC34_NO">Norway</option><option value="64FFD522-AB5D-4B79-8DAC-58D5FECFD46C_TW">Taiwan</option><option value="1651069E-D5C8-458B-A57F-999C28E97C6E_TJ">Tajikistan</option><option value="7DC05E80-5533-42EC-AF08-9DC505774A7E_TZ">Tanzania</option><option value="159D30C9-09E4-4479-964A-ABE66457201D_TH">Thailand</option><option value="B07E1108-B5D4-4200-B07C-FAD1EA320053_TG">Togo</option><option value="A269BCD5-8369-4D94-A3E6-A5349FF69E37_TO">Tonga</option></select>
+                    </div>
+                </div>
+
+                
+                <div class="row RegistrationRowCss">
+                    <div class="small-12 medium-4 columns RegistrationItemTitleCss" style="padding: 9px;">
+                        <span class="spanEmptyCheck" registvalue="How Did You Hear About Us?">How Did You Hear About Us?&nbsp;</span>
+                    </div>
+                    <div class="small-12 medium-8 columns end RegistrationItemCss" style="padding: 2px;">
+                        <select class="CheckRegisteredTextEmpty" id="select_HearAbout" registvalue="HearAbout"><option value="">- Select -</option><option value="C5D68933-6FE5-479A-8108-B85705151271">Online Search (Search Engines, Online Ads)</option><option value="DA1DC665-3D4E-4E86-97B6-60E270255C8C">Social Media (Youtube, Facebook, Instagram, etc.)</option><option value="B3E72349-546B-4B3E-B3D8-71A6D3A4E016">Email Marketing Campaigns</option><option value="3BDAC565-E6E5-4468-9560-9CF27661E02B">Company Website</option><option value="174E113A-C2E9-49A9-B2E4-3000EF529F74">Advertisements (TV, Newspapers, Magazines)</option><option value="645BF31A-09DA-430C-BEBA-A3872B60D293">Referral from Friends or Business Partners</option><option value="0B7E9031-D1FF-451E-B2A3-617100505074">Recommendation by Existing Customers</option><option value="3D8C3090-8A05-4860-BA21-0481929523F2">Through Industry Events (Exhibitions, Conferences)</option><option value="B2EB0C81-46FA-42B4-AC4B-E324CE5B3546">News Reports</option><option value="9EE637DE-20A8-4D1D-9123-6276F22538D5">Industry Associations</option><option value="9E3028AF-9DAB-4E8E-A6CB-EEAB0BA235CC">Business Directories or Yellow Pages</option><option value="B09176F6-269C-4B77-8449-4C7DE2A6AEDB">Competitors or Industry Peers</option><option value="643CAED8-AA7F-4B6B-A413-78DBE69D8A75">Government or Public Records</option><option value="F730A189-2E85-4F02-B649-41BB176624D2">Others</option></select>
+                    </div>
+                </div>
+  
+  				<div class="row RegistrationRowCss">
+<div class="small-12 medium-4 columns RegistrationItemTitleCss" style="padding: 9px;">
+                        <span class="spanEmptyCheck" registvalue="which one">which one do you like&nbsp;</span>
+                    </div>
+					<div class="small-12 medium-8 columns end RegistrationItemCss" style="padding: 9px;">
+                        <label><input type="radio" name="group1" value="1"><span>radio 1</span></label>
+<label><input type="radio" name="group1" value="2" checked="checked"><span>radio 2</span></label>
+<label><input type="radio" name="group1" value="3"><span>radio 3</span></label>
+<label><input type="radio" name="group1" value="4"><span>radio 4</span></label>
+<label><input type="radio" name="group1" value="5"><span>radio 5</span></label>
+                    </div>
+				</div>
+  <div class="row RegistrationRowCss">
+<div class="small-12 medium-4 columns RegistrationItemTitleCss" style="padding: 9px;">
+                        <span class="spanEmptyCheck" registvalue="which Checkbox">Checkbox&nbsp;</span>
+                    </div>
+					<div class="small-12 medium-8 columns end RegistrationItemCss" style="padding: 9px;">
+                        <label><input type="Checkbox" name="group2" value="1"><span>Checkbox 1</span></label>
+<label><input type="Checkbox" name="group2" value="2" checked><span>Checkbox 2</span></label>
+<label><input type="Checkbox" name="group2" value="3"><span>Checkbox 3</span></label>
+<label><input type="Checkbox" name="group2" value="4"><span>Checkbox 4</span></label>
+<label><input type="Checkbox" name="group2" value="5"><span>Checkbox 5</span></label>
+                    </div>
+				</div>
+            </div>
+<div style="margin-top: 20px;">
+  <button id="btnShowData">顯示資料</button>
+</div>
+
+<div class="displayResult">
+  <table border="1" cellpadding="5" class="tg">
+    <thead>
+      <tr>
+        <th>欄位</th>
+        <th>值</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>test</td><td>test</td></tr>
+    </tbody>
+  </table>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
