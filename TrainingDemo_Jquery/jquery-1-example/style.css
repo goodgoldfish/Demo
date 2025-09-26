@@ -62,7 +62,8 @@ body{
     margin-right: auto;
     margin-top: 0;
     margin-bottom: 0;
-    max-width: 984px;
+    max-width: 984px; 
+  	padding: 9px;
 }
 
     .row:before, .row:after {
