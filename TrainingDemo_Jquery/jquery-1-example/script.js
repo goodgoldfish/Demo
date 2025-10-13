@@ -41,6 +41,18 @@ $(function() {
       if (radio.length > 0) {
         value = radio.next("span").text();
       }
+      // 抓 checkbox
+      var checkbox = $(this).find("input[type=Checkbox]:checked");
+      if (checkbox.length > 0) {
+        //value = checkbox.next("span").text();
+        let _result = [];
+        checkbox.each(function(){
+          if($(this).prop("checked")){
+            _result.push($(this).next("span").text());
+          }
+        })
+        value = _result.join(',');
+      }
 
       if (value && label && value !=="- Select -") {
         rowHtml += "<tr><td>" + label + "</td><td>" + value + "</td></tr>";
